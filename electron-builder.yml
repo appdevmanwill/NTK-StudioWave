@@ -1,0 +1,50 @@
+appId: com.ntk.studiowave
+productName: NTK StudioWave
+executableName: NTK-StudioWave
+asar: true
+directories:
+  output: release-build
+  buildResources: build
+files:
+  - electron/**/*
+  - dist/**/*
+  - dist-server/server.cjs
+  - build/icon.*
+  - package.json
+  - "!node_modules/**/*"
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: NTK StudioWave
+  artifactName: NTK-StudioWave-Setup-${version}.${ext}
+portable:
+  artifactName: NTK-StudioWave-Portable-${version}.${ext}
+linux:
+  icon: build/icon.png
+  category: AudioVideo;Audio;Recorder
+  synopsis: Offline Studio Audio Recorder, Smart Editor & Exporter
+  description: 100% offline studio-grade audio recorder, smart noise cleaner, editor, and universal exporter.
+  maintainer: NTK Group <support@ntk.local>
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+    - target: tar.gz
+      arch:
+        - x64
+  artifactName: NTK-StudioWave-${version}-${arch}.${ext}

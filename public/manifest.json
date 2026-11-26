@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "NTK StudioWave — Reorder Suite",
+  "short_name": "NTK Studio",
+  "description": "Shared-office voice recorder, live sound console, and AI notes studio for PC and mobile.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#1D4ED8",
+  "background_color": "#0B0E14",
+  "categories": ["productivity", "utilities", "music"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

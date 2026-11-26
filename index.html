@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>NTK StudioWave — Web Audio Recorder & Studio</title>
+    <meta
+      name="description"
+      content="Record, clean, polish, edit, and export studio-grade audio 100% locally in your browser."
+    />
+    <meta name="theme-color" content="#F7F8FA" />
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem('studiowave_theme_pref');
+          if (pref !== 'system' && pref !== 'light' && pref !== 'dark') {
+            var legacy = localStorage.getItem('studiowave_theme');
+            pref = legacy === 'light' || legacy === 'dark' ? legacy : 'system';
+          }
+          var systemDark =
+            typeof window.matchMedia === 'function' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = pref === 'dark' || (pref === 'system' && systemDark);
+          var root = document.documentElement;
+          root.classList.toggle('dark', isDark);
+          root.dataset.theme = pref;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', isDark ? '#0B0E14' : '#F7F8FA');
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NTK Studio" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta property="og:title" content="NTK StudioWave — Web Audio Recorder & Studio" />
+    <meta
+      property="og:description"
+      content="Record, clean, polish, edit, and export studio-grade audio 100% locally in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-[#F7F8FA] text-slate-900 dark:bg-[#0B0E14] dark:text-slate-100 antialiased selection:bg-blue-500/20 selection:text-blue-600 dark:selection:text-blue-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-server/
+release-build/
+DEPLOY_MANUAL/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+data/
+*.keystore
+keystore.properties
+.aistudio/
+.antigravity/
+
+
