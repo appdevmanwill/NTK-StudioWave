@@ -3,6 +3,7 @@ dist/
 dist-server/
 release-build/
 DEPLOY_MANUAL/
+WORKING/
 coverage/
 .DS_Store
 *.log
